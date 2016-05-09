@@ -2,6 +2,7 @@
 
 <div id="addAndListInterface" *ngIf="!isEditing">
     <form (submit)="addName()">
+<<<<<<< HEAD
       <input [(ngModel)]="newName" placeholder="Todo Title">
       <br/>
       <br/>
@@ -27,11 +28,22 @@
     <div *ngIf="!todosService.data.length">
         No Todo items here now
     </div>
+=======
+      <input [(ngModel)]="newName" placeholder="Project Name">
+      <button type="submit">Add</button>
+    </form>
+
+
+    <table>
+        <tr *ngFor="let name of nameListService.get();let i = index"><td>{{name}}</td><td><button (click)="editName(i)">edit</button></td><td><button (click)="deleteName(i)">Delete</button></td>
+    </table>
+>>>>>>> 1afbd74... Added basic components for projects, todos, users
 </div>
 
 <div *ngIf="isEditing" id="editInterface">
     Edit interface
 
+<<<<<<< HEAD
       <br/>
       <br/>
     <form (submit)="updateName()">
@@ -44,6 +56,14 @@
       </select>
       <br/>
       <br/>
+=======
+    <form (submit)="updateName()">
+      <input [(ngModel)]="editableName" placeholder="Project Name">
+      <select>
+          <option value="">&lt;No Project&gt;</option>
+          <option *ngFor="let name of nameListService.get();let i = index" value="{{index}}">{{name}}</option>
+      </select>
+>>>>>>> 1afbd74... Added basic components for projects, todos, users
       <button type="submit">Save and go back</button>
     </form>
 

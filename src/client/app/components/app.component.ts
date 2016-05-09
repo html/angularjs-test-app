@@ -10,8 +10,11 @@ import {AboutComponent} from '../+about/index';
 import {ProjectsComponent} from '../+projects/index';
 import {TodosComponent} from '../+todos/index';
 import {UsersComponent} from '../+users/index';
+<<<<<<< HEAD
 import {View} from '@angular/core';
 import {LoginForm, LoginRedirector} from './login.component';
+=======
+>>>>>>> 1afbd74... Added basic components for projects, todos, users
 
 import { OnActivate, Router, RouteSegment, RouteTree } from '@angular/router';
 @Component({

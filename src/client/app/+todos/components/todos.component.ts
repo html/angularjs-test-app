@@ -1,20 +1,28 @@
 import {Component} from '@angular/core';
 import {FORM_DIRECTIVES} from '@angular/common';
 
+<<<<<<< HEAD
 import {ProjectsService} from '../../shared/index';
 import {TodosService} from '../../shared/index';
 import {Http, HTTP_PROVIDERS, Headers} from '@angular/http'; 
+=======
+import {NameListService} from '../../shared/index';
+>>>>>>> 1afbd74... Added basic components for projects, todos, users
 
 @Component({
   selector: 'sd-home',
   templateUrl: 'app/+todos/components/todos.component.html',
   styleUrls: ['app/+todos/components/todos.component.css'],
+<<<<<<< HEAD
   viewProviders: [HTTP_PROVIDERS],
+=======
+>>>>>>> 1afbd74... Added basic components for projects, todos, users
   directives: [FORM_DIRECTIVES]
 })
 export class TodosComponent {
   isEditing: boolean;
   newName: string;
+<<<<<<< HEAD
   newProjectId: string;
   editableTodoItem: object;
 
@@ -27,12 +35,18 @@ export class TodosComponent {
 
     this.todosService = todosService;
   }
+=======
+  editableNameId: integer;
+  editableName: string;
+  constructor(public nameListService: NameListService) {}
+>>>>>>> 1afbd74... Added basic components for projects, todos, users
 
   /*
    * @param newname  any text as input.
    * @returns return false to prevent default form submit behavior to refresh the page.
    */
   addName(): boolean {
+<<<<<<< HEAD
     this.postRequest('http://localhost:8080/add-todo-item', { name: this.newName, "projectId": this.newProjectId }).subscribe((res:Response) => {
       this.todosService.reloadData();
       this.projectsService.reloadData();
@@ -53,10 +67,22 @@ export class TodosComponent {
     }
 
     this.isEditing = true;
+=======
+    this.nameListService.add(this.newName);
+    this.newName = '';
+    return false;
+  }
+
+  editName(index: integer): boolean {
+    this.isEditing = true;
+    this.editableNameId = index;
+    this.editableName = this.nameListService.get()[index];
+>>>>>>> 1afbd74... Added basic components for projects, todos, users
 
     return false;
   }
 
+<<<<<<< HEAD
   updateName(id: string): boolean {
     this.isEditing = false;
 
@@ -74,10 +100,23 @@ export class TodosComponent {
           this.todosService.reloadData();
           this.projectsService.reloadData();
         });
+=======
+  updateName(index: integer): boolean {
+    this.nameListService.edit(this.editableNameId, this.editableName);
+    this.isEditing = false;
+
+    return true;
+  }
+
+  deleteName(index: integer): boolean {
+    if(confirm('Are you sure you want to delete project ' + this.nameListService.get()[index] + ' ?')){
+      this.nameListService.delete(index);
+>>>>>>> 1afbd74... Added basic components for projects, todos, users
     }
 
     return true;
   }
+<<<<<<< HEAD
 
   postRequest(url: string, jsonData: object): object {
     let headers = new Headers();
@@ -85,4 +124,6 @@ export class TodosComponent {
 
     return this.http.post(url, JSON.stringify(jsonData), { headers: headers });
   }
+=======
+>>>>>>> 1afbd74... Added basic components for projects, todos, users
 }
