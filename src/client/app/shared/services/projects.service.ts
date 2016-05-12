@@ -3,6 +3,7 @@ export class ProjectsService {
 <<<<<<< HEAD
   http = null;
   data = [];
+<<<<<<< HEAD
 
   setData(data: array): void {
     this.data = data;
@@ -19,6 +20,11 @@ export class ProjectsService {
       return item.name;
     });
 >>>>>>> 31e2278... Improved +projects component to work with http backend
+=======
+
+  setData(data: array): void {
+    this.data = data;
+>>>>>>> 1afcb01... Removed messy code from projects service
   }
 
   getById(id: string): object {
