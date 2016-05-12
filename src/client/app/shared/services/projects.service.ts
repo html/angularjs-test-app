@@ -1,11 +1,15 @@
 export class ProjectsService {
 <<<<<<< HEAD
+<<<<<<< HEAD
   http = null;
   data = [];
 
   setData(data: array): void {
     this.data = data;
 =======
+=======
+  http = null;
+>>>>>>> d91181b... Improved projects component
   data = [];
   names = [];
 
@@ -25,12 +29,18 @@ export class ProjectsService {
     }
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d91181b... Improved projects component
 
   reloadData(): void {
     this.http.get('http://localhost:8080/list-projects').subscribe((res:Response) => { 
       this.setData(res.json());
     })
   }
+<<<<<<< HEAD
 =======
 >>>>>>> 31e2278... Improved +projects component to work with http backend
+=======
+>>>>>>> d91181b... Improved projects component
 }

@@ -18,6 +18,7 @@
     <div *ngIf="!projectsService.data.length">
         No Projects here now
     </div>
+<<<<<<< HEAD
 =======
         <tr *ngFor="let name of nameListService.get();let i = index"><td style="width:250px">{{name}}</td><td><button (click)="editName(i)">edit</button></td><td><button (click)="deleteName(i)">Delete</button></td>
 =======
@@ -25,6 +26,8 @@
 >>>>>>> 31e2278... Improved +projects component to work with http backend
     </table>
 >>>>>>> 1afbd74... Added basic components for projects, todos, users
+=======
+>>>>>>> d91181b... Improved projects component
 </div>
 
 <div *ngIf="isEditing" id="editInterface">

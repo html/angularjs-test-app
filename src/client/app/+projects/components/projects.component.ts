@@ -53,6 +53,7 @@ export class ProjectsComponent {
   constructor(public projectsService: ProjectsService, http: Http) {
     this.http = http;
 <<<<<<< HEAD
+<<<<<<< HEAD
     projectsService.http = http;
 
     this.reloadProjectsService();
@@ -66,12 +67,15 @@ export class ProjectsComponent {
 >>>>>>> 1afbd74... Added basic components for projects, todos, users
 =======
     this.reloadNameListService();
+=======
+    projectsService.http = http;
+
+    this.reloadProjectsService();
+>>>>>>> d91181b... Improved projects component
   }
 
-  reloadNameListService() {
-    this.http.get('http://localhost:8080/list-projects').subscribe((res:Response) => { 
-      this.projectsService.setData(res.json());
-    })
+  reloadProjectsService() {
+    this.projectsService.reloadData();
   }
 >>>>>>> 31e2278... Improved +projects component to work with http backend
 
@@ -80,6 +84,7 @@ export class ProjectsComponent {
    * @returns return false to prevent default form submit behavior to refresh the page.
    */
   addName(): boolean {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     this.postRequest('http://localhost:8080/add-project', { name: this.newName }).subscribe((res:Response) => {
@@ -92,8 +97,10 @@ export class ProjectsComponent {
 =======
     let th = this;
 
+=======
+>>>>>>> d91181b... Improved projects component
     this.postRequest('http://localhost:8080/add-project', { name: this.newName }).subscribe((res:Response) => {
-      this.reloadNameListService();
+      this.reloadProjectsService();
     });
 
 >>>>>>> 31e2278... Improved +projects component to work with http backend
@@ -167,7 +174,7 @@ export class ProjectsComponent {
     headers.set('Content-Type', 'application/json');
 
     this.postRequest('http://localhost:8080/edit-project', { id: this.editableNameId, name: this.editableName }).subscribe((res:Response) => {
-      this.reloadNameListService()
+      this.reloadProjectsService()
     })
 
     return true;
@@ -189,7 +196,7 @@ export class ProjectsComponent {
   deleteName(index: string): boolean {
     if(confirm('Are you sure you want to delete project ' + this.projectsService.getById(index).name + ' ?')){
         this.postRequest('http://localhost:8080/delete-project', { id: index }).subscribe((res:Response) => {
-          this.reloadNameListService();
+          this.reloadProjectsService();
         });
 >>>>>>> 31e2278... Improved +projects component to work with http backend
     }
