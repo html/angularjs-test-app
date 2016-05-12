@@ -5,9 +5,13 @@ import {ToolbarComponent} from './toolbar.component';
 import {NameListService} from '../shared/index';
 import {ProjectsService} from '../shared/index';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {TodosService} from '../shared/index';
 =======
 >>>>>>> 31e2278... Improved +projects component to work with http backend
+=======
+import {TodosService} from '../shared/index';
+>>>>>>> 0c0a90e... Made todo item component work using backend
 import {HomeComponent} from '../+home/index';
 import {AboutComponent} from '../+about/index';
 import {ProjectsComponent} from '../+projects/index';
@@ -25,8 +29,12 @@ import { OnActivate, Router, RouteSegment, RouteTree } from '@angular/router';
   viewProviders: [NameListService, ProjectsService, TodosService],
 =======
   selector: 'sd-app',
+<<<<<<< HEAD
   viewProviders: [NameListService, ProjectsService],
 >>>>>>> 31e2278... Improved +projects component to work with http backend
+=======
+  viewProviders: [NameListService, ProjectsService, TodosService],
+>>>>>>> 0c0a90e... Made todo item component work using backend
   templateUrl: 'app/components/app.component.html',
   directives: [ROUTER_DIRECTIVES, NavbarComponent, ToolbarComponent]
 })

@@ -3,6 +3,9 @@
 <div id="addAndListInterface" *ngIf="!isEditing">
     <form (submit)="addName()">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 0c0a90e... Made todo item component work using backend
       <input [(ngModel)]="newName" placeholder="Todo Title">
       <br/>
       <br/>
@@ -12,6 +15,7 @@
       </select>
       <br/>
       <br/>
+<<<<<<< HEAD
       <button type="submit">Add</button>
     </form>
 
@@ -30,19 +34,34 @@
     </div>
 =======
       <input [(ngModel)]="newName" placeholder="Project Name">
+=======
+>>>>>>> 0c0a90e... Made todo item component work using backend
       <button type="submit">Add</button>
     </form>
 
+    <br/>
+    <div class="hr"></div>
 
     <table>
-        <tr *ngFor="let name of nameListService.get();let i = index"><td>{{name}}</td><td><button (click)="editName(i)">edit</button></td><td><button (click)="deleteName(i)">Delete</button></td>
+        <tr *ngFor="let item of todosService.data;let i = index">
+            <td style="width:250px">{{item.name}}</td>
+            <td><button (click)="editName(item._id)">edit</button></td>
+            <td><button (click)="deleteName(item._id)">Delete</button></td>
+        </tr>
     </table>
+<<<<<<< HEAD
 >>>>>>> 1afbd74... Added basic components for projects, todos, users
+=======
+    <div *ngIf="!todosService.data.length">
+        No Todo items here now
+    </div>
+>>>>>>> 0c0a90e... Made todo item component work using backend
 </div>
 
 <div *ngIf="isEditing" id="editInterface">
     Edit interface
 
+<<<<<<< HEAD
 <<<<<<< HEAD
       <br/>
       <br/>
@@ -57,13 +76,24 @@
       <br/>
       <br/>
 =======
+=======
+      <br/>
+      <br/>
+>>>>>>> 0c0a90e... Made todo item component work using backend
     <form (submit)="updateName()">
-      <input [(ngModel)]="editableName" placeholder="Project Name">
-      <select>
+      <input [(ngModel)]="editableTodoItem.name" placeholder="Todo Title">
+      <br/>
+      <br/>
+      <select [(ngModel)]="editableTodoItem.projectId">
           <option value="">&lt;No Project&gt;</option>
-          <option *ngFor="let name of nameListService.get();let i = index" value="{{index}}">{{name}}</option>
+          <option *ngFor="let name of projectsService.data;" value="{{name._id}}">{{name.name}}</option>
       </select>
+<<<<<<< HEAD
 >>>>>>> 1afbd74... Added basic components for projects, todos, users
+=======
+      <br/>
+      <br/>
+>>>>>>> 0c0a90e... Made todo item component work using backend
       <button type="submit">Save and go back</button>
     </form>
 
