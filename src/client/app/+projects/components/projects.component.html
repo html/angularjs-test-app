@@ -11,6 +11,7 @@
 
     <table>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <tr *ngFor="let item of projectsService.data;let i = index"><td style="width:250px">{{item.name}}</td><td><button (click)="editName(item._id)">edit</button></td><td><button (click)="deleteName(item._id)">Delete</button></td>
         </tr>
     </table>
@@ -19,6 +20,9 @@
     </div>
 =======
         <tr *ngFor="let name of nameListService.get();let i = index"><td style="width:250px">{{name}}</td><td><button (click)="editName(i)">edit</button></td><td><button (click)="deleteName(i)">Delete</button></td>
+=======
+        <tr *ngFor="let item of projectsService.data;let i = index"><td style="width:250px">{{item.name}}</td><td><button (click)="editName(item._id)">edit</button></td><td><button (click)="deleteName(item._id)">Delete</button></td>
+>>>>>>> 31e2278... Improved +projects component to work with http backend
     </table>
 >>>>>>> 1afbd74... Added basic components for projects, todos, users
 </div>

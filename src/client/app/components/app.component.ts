@@ -4,7 +4,10 @@ import {NavbarComponent} from './navbar.component';
 import {ToolbarComponent} from './toolbar.component';
 import {NameListService} from '../shared/index';
 import {ProjectsService} from '../shared/index';
+<<<<<<< HEAD
 import {TodosService} from '../shared/index';
+=======
+>>>>>>> 31e2278... Improved +projects component to work with http backend
 import {HomeComponent} from '../+home/index';
 import {AboutComponent} from '../+about/index';
 import {ProjectsComponent} from '../+projects/index';
@@ -18,7 +21,12 @@ import {LoginForm, LoginRedirector} from './login.component';
 
 import { OnActivate, Router, RouteSegment, RouteTree } from '@angular/router';
 @Component({
+<<<<<<< HEAD
   viewProviders: [NameListService, ProjectsService, TodosService],
+=======
+  selector: 'sd-app',
+  viewProviders: [NameListService, ProjectsService],
+>>>>>>> 31e2278... Improved +projects component to work with http backend
   templateUrl: 'app/components/app.component.html',
   directives: [ROUTER_DIRECTIVES, NavbarComponent, ToolbarComponent]
 })
