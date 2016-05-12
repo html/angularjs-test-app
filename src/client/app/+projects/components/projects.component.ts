@@ -170,9 +170,6 @@ export class ProjectsComponent {
 >>>>>>> 31e2278... Improved +projects component to work with http backend
     this.isEditing = false;
 
-    let headers = new Headers();
-    headers.set('Content-Type', 'application/json');
-
     this.postRequest('http://localhost:8080/edit-project', { id: this.editableNameId, name: this.editableName }).subscribe((res:Response) => {
       this.reloadProjectsService()
     })
