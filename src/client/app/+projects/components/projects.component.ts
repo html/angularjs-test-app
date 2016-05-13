@@ -118,6 +118,7 @@ export class ProjectsComponent {
 
     if(item){
 <<<<<<< HEAD
+<<<<<<< HEAD
       this.isEditing = true;
       this.editableNameId = index;
       this.editableName = item.name;
@@ -132,6 +133,11 @@ export class ProjectsComponent {
         this.isEditing = true;
         this.editableNameId = index;
         this.editableName = item.name;
+=======
+      this.isEditing = true;
+      this.editableNameId = index;
+      this.editableName = item.name;
+>>>>>>> 28173ce... Added tiny auth module
     }
 >>>>>>> 31e2278... Improved +projects component to work with http backend
 
@@ -192,10 +198,16 @@ export class ProjectsComponent {
 
   deleteName(index: string): boolean {
     if(confirm('Are you sure you want to delete project ' + this.projectsService.getById(index).name + ' ?')){
+<<<<<<< HEAD
         this.postRequest('http://localhost:8080/delete-project', { id: index }).subscribe((res:Response) => {
           this.reloadProjectsService();
         });
 >>>>>>> 31e2278... Improved +projects component to work with http backend
+=======
+      this.postRequest('http://localhost:8080/delete-project', { id: index }).subscribe((res:Response) => {
+        this.reloadProjectsService();
+      });
+>>>>>>> 28173ce... Added tiny auth module
     }
 
     return true;

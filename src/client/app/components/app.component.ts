@@ -18,6 +18,7 @@ import {ProjectsComponent} from '../+projects/index';
 import {TodosComponent} from '../+todos/index';
 import {UsersComponent} from '../+users/index';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {View} from '@angular/core';
 import {LoginForm, LoginRedirector} from './login.component';
 =======
@@ -33,6 +34,13 @@ import { OnActivate, Router, RouteSegment, RouteTree } from '@angular/router';
   viewProviders: [NameListService, ProjectsService],
 >>>>>>> 31e2278... Improved +projects component to work with http backend
 =======
+=======
+import {View} from '@angular/core';
+import {LoginForm, LoginRedirector} from './login.component';
+
+import { OnActivate, Router, RouteSegment, RouteTree } from '@angular/router';
+@Component({
+>>>>>>> 28173ce... Added tiny auth module
   viewProviders: [NameListService, ProjectsService, TodosService],
 >>>>>>> 0c0a90e... Made todo item component work using backend
   templateUrl: 'app/components/app.component.html',
