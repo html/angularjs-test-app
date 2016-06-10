@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  padding: 0 16px;
+}
+
+input {
+  width: 250px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0 0 0 8px;
+}
+
+.hr {
+    border-top: 1px solid #106CC8;
+    width: 500px;
+    height: 10px;
+}

@@ -1,0 +1,11 @@
+<div *ngIf="show">
+    <br/>
+    <form *ngIf="authCredentials" (submit)="login()">
+        <div *ngIf="errorMessage"><b>{{errorMessage}}</b></div>
+
+      <input [(ngModel)]="authCredentials.login" placeholder="Your login">
+      <input type="password" [(ngModel)]="authCredentials.password" placeholder="Your password">
+
+      <button type="submit">Login</button>
+    </form>
+</div>

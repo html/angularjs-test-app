@@ -1,0 +1,30 @@
+<br/>
+
+<div id="addAndListInterface" *ngIf="!isEditing">
+    <form (submit)="addName()">
+      <input [(ngModel)]="newName" placeholder="Project Name">
+      <button type="submit">Add</button>
+    </form>
+
+
+    <table>
+        <tr *ngFor="let name of nameListService.get();let i = index"><td>{{name}}</td><td><button (click)="editName(i)">edit</button></td><td><button (click)="deleteName(i)">Delete</button></td>
+    </table>
+</div>
+
+<div *ngIf="isEditing" id="editInterface">
+    Edit interface
+
+    <form (submit)="updateName()">
+      <input [(ngModel)]="editableName" placeholder="Project Name">
+      <select>
+          <option value="">&lt;No Project&gt;</option>
+          <option *ngFor="let name of nameListService.get();let i = index" value="{{index}}">{{name}}</option>
+      </select>
+      <button type="submit">Save and go back</button>
+    </form>
+
+    <br/>
+
+    <button (click)="isEditing=false">Back</button>
+</div>

@@ -1,0 +1,53 @@
+<br/>
+
+<div id="addAndListInterface" *ngIf="!isEditing">
+    <form (submit)="addName()">
+      <input [(ngModel)]="newName" placeholder="Todo Title">
+      <br/>
+      <br/>
+      Project: <select [(ngModel)]="newProjectId">
+          <option value="">&lt;No Project&gt;</option>
+          <option *ngFor="let name of projectsService.data;" value="{{name._id}}">{{name.name}}</option>
+      </select>
+      <br/>
+      <br/>
+      <button type="submit">Add</button>
+    </form>
+
+    <br/>
+    <div class="hr"></div>
+
+    <table>
+        <tr *ngFor="let item of todosService.data;let i = index">
+            <td style="width:250px">{{item.name}}</td>
+            <td><button (click)="editName(item._id)">edit</button></td>
+            <td><button (click)="deleteName(item._id)">Delete</button></td>
+        </tr>
+    </table>
+    <div *ngIf="!todosService.data.length">
+        No Todo items here now
+    </div>
+</div>
+
+<div *ngIf="isEditing" id="editInterface">
+    Edit interface
+
+      <br/>
+      <br/>
+    <form (submit)="updateName()">
+      <input [(ngModel)]="editableTodoItem.name" placeholder="Todo Title">
+      <br/>
+      <br/>
+      <select [(ngModel)]="editableTodoItem.projectId">
+          <option value="">&lt;No Project&gt;</option>
+          <option *ngFor="let name of projectsService.data;" value="{{name._id}}">{{name.name}}</option>
+      </select>
+      <br/>
+      <br/>
+      <button type="submit">Save and go back</button>
+    </form>
+
+    <br/>
+
+    <button (click)="isEditing=false">Back</button>
+</div>
